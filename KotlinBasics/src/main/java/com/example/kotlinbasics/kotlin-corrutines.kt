@@ -2,6 +2,7 @@ package com.example.kotlinbasics
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
+import kotlin.time.Duration.Companion.milliseconds
 
 // ---------------------------------------------------------
 // 1. MODELADO DE DATOS
@@ -45,7 +46,7 @@ suspend fun autenticarUsuario(usuario: String, contrasena: String): ResultadoLog
 
     // delay() es la versión "suspend" de un Thread.sleep(): pausa la
     // corrutina 2000 ms (2 segundos) SIN bloquear el hilo en el que corre.
-    delay(2000L)
+    delay(2000L.milliseconds)
 
     // Lógica de validación simple pedida por la guía.
     return if (usuario == "admin" && contrasena == "1234") {
